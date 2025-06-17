@@ -1,205 +1,89 @@
 <!DOCTYPE html>
 <!-- 
-    PaCar EcoSonic - Entrega 2
-    Desarrollador: CRISTIAN CANDIA ARIAS
-    Fecha: 3 de junio de 2025
+    PaCar EcoSonic - Entrega 3
+    Desarrollador: Cristian Candia
 -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PáCar EcoSonic - Parlantes Artesanales Sustentables</title>
-
-    <!-- Uso de framework CSS para agilizar el desarrollo y mantener consistencia visual -->
+    <title>PaCar EcoSonic - Parlantes Artesanales Sustentables</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Fuente principal del sitio: Tipografía moderna para mejorar la legibilidad -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Íconos para botones y navegación -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Estilos personalizados del proyecto -->
+    <!-- Enlace al CSS compilado desde SASS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-gray-50 text-gray-700">
 
-    <!-- Encabezado fijo con navegación principal y logo -->
+    <!-- INICIO: Header y Navegación Principal -->
     <header class="header-sticky" role="banner">
         <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center" aria-label="Navegación principal">
-            <!-- Logo y nombre de la marca -->
             <a href="index.html" id="logo-link" class="flex items-center space-x-3">
-                <img src="assets/images/logo-PaCar.png" alt="Logo PaCar EcoSonic" class="h-8 sm:h-20 w-auto">
-                <span class="text-xl sm:text-2xl md:text-3xl font-bold text-green-700 tracking-tight">PáCar EcoSonic</span>                 
-            </a>            
-            <!-- Navegación de escritorio -->
+                <!-- 1. La imagen del logo -->
+                <img src="assets/images/logo-PaCar.png" alt="Logo de PaCar EcoSonic" class="h-8 sm:h-10 w-auto">                
+                
+                <!-- 2. El texto del nombre de la marca -->
+                <span class="text-xl sm:text-2xl font-bold text-green-700 tracking-tight">PaCar EcoSonic</span>
+            </a>
+            
             <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
-                <a href="#productos" class="nav-link-hover main-nav-link text-gray-700 hover:text-green-700 px-2 lg:px-3 py-2 text-sm font-medium">Productos</a>
-                <a href="#sustentabilidad" class="nav-link-hover main-nav-link text-gray-700 hover:text-green-700 px-2 lg:px-3 py-2 text-sm font-medium">Sustentabilidad</a>
-                <a href="#nosotros" class="nav-link-hover main-nav-link text-gray-700 hover:text-green-700 px-2 lg:px-3 py-2 text-sm font-medium">Nosotros</a>
-                <button id="login-btn-nav-placeholder" class="btn btn-outline text-sm px-3 lg:px-4 py-2">Ingresar</button>
-                <button id="register-btn-nav-placeholder" class="btn btn-primary text-sm px-3 lg:px-4 py-2">Registrarse</button>
+                <a href="index.html" class="nav-link-hover main-nav-link font-semibold text-green-700 px-2 lg:px-3 py-2 text-sm">Inicio</a>
+                <a href="productos.html" class="nav-link-hover main-nav-link text-gray-600 hover:text-green-700 px-2 lg:px-3 py-2 text-sm font-medium">Productos</a>
+                <a href="sustentabilidad.html" class="nav-link-hover main-nav-link text-gray-600 hover:text-green-700 px-2 lg:px-3 py-2 text-sm font-medium">Sustentabilidad</a>
+                <a href="nosotros.html" class="nav-link-hover main-nav-link text-gray-600 hover:text-green-700 px-2 lg:px-3 py-2 text-sm font-medium">Nosotros</a>
+                <a href="contacto.html" class="nav-link-hover main-nav-link text-gray-600 hover:text-green-700 px-2 lg:px-3 py-2 text-sm font-medium">Contacto</a>
             </div>
             
-            <!-- Botón de carrito y menú móvil -->
             <div class="flex items-center">
-                 <button id="cart-button-placeholder" class="ml-1 md:ml-2 text-gray-600 hover:text-green-700 relative p-2" aria-label="Ver carrito de compras (simulado)">
-                    <i class="fas fa-shopping-cart text-xl md:text-2xl" aria-hidden="true"></i>
-                    <span id="cart-count-placeholder" class="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center transform translate-x-1/3 -translate-y-1/3">0</span>
-                </button>
                 <button id="mobile-menu-button" class="md:hidden ml-2 p-2 text-gray-600 hover:text-green-700" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars text-xl" aria-hidden="true"></i>
                 </button>
             </div>
         </nav>
-        <!-- Menú de navegación móvil -->
         <div id="mobile-menu" class="md:hidden bg-white shadow-lg absolute top-full left-0 right-0 transform -translate-y-full hidden" role="navigation">
              <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#productos" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Productos</a>
-                <a href="#sustentabilidad" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Sustentabilidad</a>
-                <a href="#nosotros" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Nosotros</a>
-                <div class="border-t border-gray-200 pt-2 mt-2 space-y-1">
-                    <button id="login-btn-mobile-placeholder" class="mobile-nav-item w-full text-left block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Iniciar Sesión</button>
-                    <button id="register-btn-mobile-placeholder" class="mobile-nav-item w-full text-left block px-3 py-2 rounded-md text-base font-medium text-white bg-green-600 hover:bg-green-700">Registrarse</button>
-                </div>
+                <a href="index.html" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-green-700 bg-gray-100">Inicio</a>
+                <a href="productos.html" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Productos</a>
+                <a href="sustentabilidad.html" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Sustentabilidad</a>
+                <a href="nosotros.html" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Nosotros</a>
+                <a href="contacto.html" class="main-nav-link mobile-nav-item block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-green-700 hover:bg-gray-50">Contacto</a>
             </div>
         </div>
     </header>
+    <!-- FIN: Header y Navegación Principal -->
+
     <main id="main-page-content" role="main"> 
-        <!-- Sección principal con fondo destacado y mensaje de bienvenida -->
         <section class="hero-bg text-white" aria-labelledby="hero-main-title">
             <div class="container mx-auto px-4 sm:px-6 text-center">
-                <h1 id="hero-main-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 hero-text-animate" style="animation-delay: 0.2s;">PáCar EcoSonic</h1>
+                <h1 id="hero-main-title" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 hero-text-animate" style="animation-delay: 0.2s;">PaCar EcoSonic</h1>
                 <p id="hero-main-subtitle" class="text-lg sm:text-xl md:text-2xl mb-6 md:mb-8 hero-text-animate" style="animation-delay: 0.4s;">Sonido artesanal que honra nuestra tierra.</p>
                 <p class="text-base sm:text-lg md:text-xl mb-8 md:mb-10 max-w-xl md:max-w-3xl mx-auto hero-text-animate" style="animation-delay: 0.6s;">Combinamos tecnología de precisión, diseño sustentable y la nobleza de la madera nativa reciclada para crear parlantes únicos con alma chilena.</p>
-                <a href="#productos" class="btn btn-primary text-base md:text-lg hero-text-animate main-nav-link" style="animation-delay: 0.8s;">Descubre Nuestros Parlantes</a>
+                <a href="productos.html" class="btn btn-primary text-base md:text-lg hero-text-animate" style="animation-delay: 0.8s;">Descubre Nuestros Parlantes</a>
             </div>
         </section>
-        <!-- Propuesta de valor con tres características principales -->
+        
         <section id="propuesta-valor" class="py-12 md:py-16 lg:py-24 bg-white fade-in-section" aria-labelledby="propuesta-valor-title">
             <div class="container mx-auto px-4 sm:px-6">
                 <h2 id="propuesta-valor-title" class="section-title">🌱 Nuestra Propuesta de Valor</h2>
                 <p class="section-subtitle px-4">Diseñamos y fabricamos parlantes utilizando madera nativa reciclada, tallada con tecnología CNC Router de precisión y ensamblados a mano con detalle artesanal.</p>
                 <div class="grid md:grid-cols-3 gap-6 md:gap-8 text-center">
-                    <!-- Característica: Madera reciclada -->
                     <article class="p-4 md:p-6"> <div class="icon-feature" aria-hidden="true">🪵</div> <h3 class="text-lg md:text-xl font-semibold mb-2 text-green-700">Madera Nativa Reciclada</h3> <p class="text-sm md:text-base text-gray-600">Utilizamos maderas nobles rescatadas, dándoles una nueva vida llena de música y diseño.</p> </article>
-                    <!-- Característica: Precisión y artesanía -->
                     <article class="p-4 md:p-6"> <div class="icon-feature" aria-hidden="true">⚙️</div> <h3 class="text-lg md:text-xl font-semibold mb-2 text-green-700">Precisión y Artesanía</h3> <p class="text-sm md:text-base text-gray-600">Tecnología CNC Router y ensamblaje manual para un acabado impecable y único.</p> </article>
-                    <!-- Característica: Carácter acústico -->
                     <article class="p-4 md:p-6"> <div class="icon-feature" aria-hidden="true">🎶</div> <h3 class="text-lg md:text-xl font-semibold mb-2 text-green-700">Carácter Acústico Único</h3> <p class="text-sm md:text-base text-gray-600">La singularidad de la madera se traduce en una experiencia sonora inigualable y personal.</p> </article>
                 </div>
             </div>
         </section>
-        <!-- Catálogo de productos destacados -->
-        <section id="productos" class="py-12 md:py-16 lg:py-24 bg-gray-50 fade-in-section" aria-labelledby="productos-title">
-            <div class="container mx-auto px-4 sm:px-6">
-                <h2 id="productos-title" class="section-title">🔉 Línea de Productos PáCar</h2>
-                <p class="section-subtitle px-4">Inspirados en la geografía poética de Chile, cada modelo es una invitación a sentir el paisaje a través del sonido.</p>
-                <div id="product-list-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
-                    <!-- Producto: Ventisquero -->
-                    <article class="card fade-in-section">
-                        <img src="assets\images\p-ventisquero.png" alt="Parlante artesanal PaCar Ventisquero de madera oscura y diseño imponente">
-                        <div class="card-content">
-                            <h3 class="card-title">PáCar Ventisquero</h3>
-                            <p class="text-gray-700 mb-1"><span class="font-semibold">Potencia:</span> 25x2W</p>
-                            <p class="text-gray-700 mb-3"><span class="font-semibold">Precio:</span> $150.000 CLP</p>
-                            <p class="text-gray-600 mb-4 description">Imponente y envolvente. Sonido de alta fidelidad con presencia majestuosa.</p>
-                            <div class="mb-4"> <span class="tag">Alta Potencia</span> <span class="tag">Sonido Envolvente</span> </div>
-                            <button class="btn btn-secondary product-detail-btn mt-auto" data-product-name="PaCar Ventisquero">Ver Detalles</button>
-                        </div>
-                    </article>
-                    <!-- Producto: Llanura -->
-                    <article class="card fade-in-section" style="animation-delay: 0.2s;">
-                        <img src="assets\images\p-llanura.png" alt="Parlante artesanal PaCar Llanura de madera clara y diseño equilibrado">
-                        <div class="card-content">
-                            <h3 class="card-title">PáCar Llanura</h3>
-                            <p class="text-gray-700 mb-1"><span class="font-semibold">Potencia:</span> 8x2W (Estéreo)</p>
-                            <p class="text-gray-700 mb-3"><span class="font-semibold">Precio:</span> $95.000 CLP</p>
-                            <p class="text-gray-600 mb-4 description">Equilibrado y versátil. Disfruta de tu música con claridad y detalle en cualquier ambiente.</p>
-                             <div class="mb-4"> <span class="tag">Estéreo</span> <span class="tag">Versátil</span> </div>
-                            <button class="btn btn-secondary product-detail-btn mt-auto" data-product-name="PaCar Llanura">Ver Detalles</button>
-                        </div>
-                    </article>
-                    <!-- Producto: Duna -->
-                    <article class="card fade-in-section" style="animation-delay: 0.4s;">
-                        <img src="assets\images\p-duna.png" alt="Parlante artesanal PaCar Duna portátil de madera natural y diseño íntimo">
-                        <div class="card-content">
-                            <h3 class="card-title">PáCar Duna</h3>
-                            <p class="text-gray-700 mb-1"><span class="font-semibold">Potencia:</span> 8W (Portátil)</p>
-                            <p class="text-gray-700 mb-3"><span class="font-semibold">Precio:</span> $60.000 CLP</p>
-                            <p class="text-gray-600 mb-4 description">Livianos, íntimos y naturales. Lleva contigo un sonido personal y cálido.</p>
-                             <div class="mb-4"> <span class="tag">Portátil</span> <span class="tag">Natural</span> </div>
-                            <button class="btn btn-secondary product-detail-btn mt-auto" data-product-name="PaCar Duna / Bruma">Ver Detalles</button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-        <!-- Sección sobre tecnología propia -->
-        <section id="tecnologia" class="py-12 md:py-16 lg:py-24 bg-white fade-in-section" aria-labelledby="tecnologia-title">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                    <div class="md:w-1/2">
-                        <h2 id="tecnologia-title" class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-green-700 text-left">📱 Tecnología Intuitiva y Elegante</h2>                        
-                        <p class="text-sm md:text-base text-gray-600 mb-6">Controla tu música, gestiona la conectividad Bluetooth y personaliza tu experiencia sonora con una interfaz moderna que, al mismo tiempo, honra la estética natural de nuestros parlantes.</p>
-                        <ul class="list-disc list-inside text-sm md:text-base text-gray-600 space-y-2 pl-2">
-                            <li>Control de reproducción y volumen fluido.</li> <li>Conectividad Bluetooth simplificada y estable.</li> <li>Ajustes de ecualización personalizados.</li> <li>Interfaz inspirada en la naturaleza y la madera.</li>
-                        </ul>
-                    </div>
-                    <div class="md:w-1/2 mt-6 md:mt-0"> 
-                        <img src="assets\images\desarmado.png" alt="Interior de PaCar EcoSonic" class="rounded-xl shadow-xl w-full"> 
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Sección de sustentabilidad y materiales -->
-        <section id="sustentabilidad" class="py-12 md:py-16 lg:py-24 bg-gray-50 fade-in-section" aria-labelledby="sustentabilidad-title">
-            <div class="container mx-auto px-4 sm:px-6">
-                <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
-                    <div class="md:w-1/2">
-                        <h2 id="sustentabilidad-title" class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-green-700 text-left">♻️ Compromiso con la Sustentabilidad</h2>
-                        <p class="text-base md:text-lg text-gray-700 mb-4">En PaCar EcoSonic, la sustentabilidad es el núcleo de nuestra filosofía y acción.</p>
-                        <p class="text-sm md:text-base text-gray-600 mb-6">Utilizamos exclusivamente materiales reciclados y maderas rescatadas de procesos de demolición o descarte industrial. Creemos en una producción de bajo impacto, fomentando la economía circular y el profundo respeto por nuestro entorno natural.</p>
-                        <ul class="list-disc list-inside text-sm md:text-base text-gray-600 space-y-2 pl-2">
-                            <li>Maderas nativas chilenas 100% recicladas.</li> <li>Producción de bajo impacto ambiental y huella de carbono reducida.</li> <li>Fomento activo de la economía circular local.</li> <li>Respeto y valoración por el ecosistema chileno.</li>
-                        </ul>
-                    </div>
-                    <div class="md:w-1/2 mt-6 md:mt-0"> 
-                        <img src="https://images.pexels.com/photos/129733/pexels-photo-129733.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&dpr=1" alt="Maderas nobles recicladas apiladas, mostrando la belleza y textura del material sustentable" class="rounded-xl shadow-xl w-full" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x450/16a085/ffffff?text=Madera+Sustentable';"> 
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Sección sobre la inspiración local y cultural -->
-        <section id="nosotros" class="py-12 md:py-16 lg:py-24 bg-white fade-in-section" aria-labelledby="nosotros-title">
+        
+        <section id="contacto-cta" class="py-16 md:py-20 lg:py-28 bg-green-700 text-white fade-in-section" aria-labelledby="contacto-cta-title">
             <div class="container mx-auto px-4 sm:px-6 text-center">
-                <h2 id="nosotros-title" class="section-title">Identidad Local: Un Homenaje a Chile</h2>
-                <p class="section-subtitle px-4">Nuestros parlantes son más que objetos; son un homenaje al territorio chileno. Inspirados por la riqueza geográfica y cultural de nuestro país, los nombres, formas y conceptos de cada PaCar evocan paisajes naturales.</p>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">                    
-                    <figure class="fade-in-section" style="animation-delay: 0.1s;"> <img src="assets\images\ventisquero.jpg" alt="Imponente glaciar patagónico chileno, inspiración para los parlantes Ventisquero" class="rounded-lg shadow-lg w-full h-48 sm:h-56 object-cover mb-4"> <figcaption class="text-lg md:text-xl font-semibold text-green-700">Ventisqueros Australes</figcaption> </figure>                  
-                    <figure class="fade-in-section" style="animation-delay: 0.3s;"> <img src="assets\images\dunas.avif" alt="Dunas doradas del desierto de Atacama en Chile al atardecer, inspiración para los parlantes Duna" class="rounded-lg shadow-lg w-full h-48 sm:h-56 object-cover mb-4"> <figcaption class="text-lg md:text-xl font-semibold text-green-700">Dunas Serenas</figcaption> </figure>                  
-                    <figure class="fade-in-section" style="animation-delay: 0.5s;"> <img src="assets\images\llanura.jpg" alt="Paisaje costero chileno con neblina matutina entre árboles, inspiración para los parlantes Bruma" class="rounded-lg shadow-lg w-full h-48 sm:h-56 object-cover mb-4"> <figcaption class="text-lg md:text-xl font-semibold text-green-700">Llanuras Encantadas</figcaption> </figure>
-                </div>
-            </div>
-        </section>
-        <!-- Público objetivo del producto -->
-        <section id="target-market" class="py-12 md:py-16 lg:py-24 bg-gray-50 fade-in-section" aria-labelledby="target-market-title">
-            <div class="container mx-auto px-4 sm:px-6">
-                <h2 id="target-market-title" class="section-title">🛍️ Para Quién Creamos</h2>
-                <div class="max-w-3xl mx-auto text-center">
-                    <p class="text-base md:text-lg text-gray-700 mb-4 px-4">Nos dirigimos a consumidores conscientes, aquellos que valoran el diseño auténtico, el audio de alta calidad y la sustentabilidad como pilares fundamentales.</p>
-                    <p class="text-sm md:text-base text-gray-600 mb-8 px-4">PaCar EcoSonic se posiciona en el segmento premium artesanal-tecnológico, ideal para hogares, oficinas con carácter o espacios creativos.</p>
-                    <div class="flex flex-wrap justify-center gap-2 sm:gap-3"> <span class="tag bg-green-100 text-green-800 border border-green-300 text-xs sm:text-sm">Amantes del Diseño</span> <span class="tag bg-green-100 text-green-800 border border-green-300 text-xs sm:text-sm">Audio de Calidad</span> <span class="tag bg-green-100 text-green-800 border border-green-300 text-xs sm:text-sm">Conciencia Ambiental</span> <span class="tag bg-green-100 text-green-800 border border-green-300 text-xs sm:text-sm">Premium Artesanal</span> </div>
-                </div>
-            </div>
-        </section>
-        <!-- Sección de contacto con llamado a la acción -->
-        <section id="contacto" class="py-16 md:py-20 lg:py-28 bg-green-700 text-white fade-in-section" aria-labelledby="contacto-title">
-            <div class="container mx-auto px-4 sm:px-6 text-center">
-                <h2 id="contacto-title" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">¿Listo para experimentar el sonido PaCar?</h2>
+                <h2 id="contacto-cta-title" class="text-2xl md:text-3xl lg:text-4xl font-bold mb-6">¿Listo para experimentar el sonido PaCar?</h2>
                 <p class="text-base md:text-lg lg:text-xl mb-8 md:mb-10 max-w-xl md:max-w-2xl mx-auto px-4">Contáctanos para conocer más, realizar un pedido o conversar sobre música y diseño sustentable.</p>
-                <a href="mailto:contacto@pacarecosonic.cl" class="btn bg-white text-green-700 hover:bg-gray-100 font-bold py-3 px-8 md:px-10 text-base md:text-lg transition duration-300">Contáctanos Ahora</a>
+                <a href="contacto.html" class="btn bg-white text-green-700 hover:bg-gray-100 font-bold py-3 px-8 md:px-10 text-base md:text-lg transition duration-300">Contáctanos Ahora</a>
             </div>
         </section>
     </main> 
-    <!-- Pie de página con información de derechos y redes sociales -->
+
     <footer class="bg-gray-800 text-gray-400 py-12" role="contentinfo">
         <div class="container mx-auto px-4 sm:px-6 text-center">
             <p class="mb-2 text-sm">&copy; 2025 PaCar EcoSonic. Todos los derechos reservados.</p>
@@ -210,66 +94,7 @@
             </div>
         </div>
     </footer>
-    <!-- Notificación tipo toast para mensajes al usuario -->
-    <div id="toast-notification" class="toast" role="alert" aria-live="assertive"></div>
-
-    <!-- Modal del carrito de compras -->
-    <div id="cart-modal" class="modal" aria-labelledby="cart-modal-title-placeholder" aria-modal="true" role="dialog">
-        <div class="modal-content cart-modal-content">
-            <!-- Encabezado del modal con título y botón de cierre -->
-            <div class="flex justify-between items-center mb-6 pb-4 border-b border-gray-200"> 
-                <h2 id="cart-modal-title-placeholder" class="text-xl md:text-2xl font-semibold text-gray-800">Tu Carrito</h2> 
-                <button id="close-cart-btn-placeholder" class="text-2xl text-gray-500 hover:text-gray-700" aria-label="Cerrar carrito">&times;</button> 
-            </div>
-            <!-- Contenedor de productos en el carrito -->
-            <div id="cart-items-placeholder-container" class="mb-6 max-h-60 overflow-y-auto"> 
-                <div class="cart-item-placeholder">
-                    <img src="https://placehold.co/100x100/00796b/ffffff?text=PaCar" alt="Miniatura de producto PaCar Llanura en carrito" class="w-16 h-16 object-cover rounded mr-4">
-                    <div class="cart-item-details">
-                        <h4 class="font-medium text-gray-800">PaCar Llanura (Ejemplo)</h4>
-                        <p class="text-sm text-gray-500">Cantidad: 1</p>
-                    </div>
-                    <p class="font-semibold text-gray-800">$95.000</p>
-                </div>
-                <div class="cart-item-placeholder">
-                    <img src="https://placehold.co/100x100/0284c7/ffffff?text=Eco" alt="Miniatura de producto PaCar Duna en carrito" class="w-16 h-16 object-cover rounded mr-4">
-                    <div class="cart-item-details">
-                        <h4 class="font-medium text-gray-800">PaCar Duna (Ejemplo)</h4>
-                        <p class="text-sm text-gray-500">Cantidad: 2</p>
-                    </div>
-                    <p class="font-semibold text-gray-800">$120.000</p>
-                </div>
-                <!-- Mensaje para carrito vacío -->
-                <p id="empty-cart-message-placeholder" class="text-gray-500 text-center py-4 hidden">Tu carrito está vacío.</p> 
-            </div>
-            <!-- Total y botón de pago simulado -->
-            <div class="border-t border-gray-200 pt-6">
-                <div class="flex justify-between items-center mb-4"> 
-                    <span class="text-lg font-semibold text-gray-800">Total Estimado:</span> 
-                    <span id="cart-total-placeholder" class="text-lg font-bold text-green-700">$215.000 CLP</span> 
-                </div>
-                <button class="btn btn-primary w-full opacity-50 cursor-not-allowed" title="Funcionalidad de pago no implementada para esta entrega">Proceder al Pago (Simulado)</button> 
-                <p class="text-xs text-gray-500 mt-3 text-center">La funcionalidad completa del carrito se habilitará en futuras entregas.</p> 
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de inicio de sesión -->
-    <div id="login-modal" class="modal" aria-labelledby="login-modal-title-placeholder" aria-modal="true" role="dialog">
-        <div class="modal-content">
-            <div class="flex justify-between items-center mb-6"> <h2 id="login-modal-title-placeholder" class="text-xl md:text-2xl font-bold text-green-700">Iniciar Sesión</h2> <button id="close-login-modal-btn-placeholder" class="text-2xl text-gray-600 hover:text-gray-800" aria-label="Cerrar modal de inicio de sesión">&times;</button> </div>
-            <form> <div> <label for="login-email-placeholder" class="form-label">Correo</label> <input type="email" id="login-email-placeholder" class="form-input" required autocomplete="email" placeholder="tu@correo.cl"> </div> <div> <label for="login-password-placeholder" class="form-label">Contraseña</label> <input type="password" id="login-password-placeholder" class="form-input" required autocomplete="current-password" placeholder="••••••••"> </div> <button type="button" id="login-submit-placeholder" class="btn btn-primary w-full mt-6">Ingresar (Simulado)</button> <p class="text-sm text-center mt-4">¿No tienes cuenta? <button type="button" id="open-register-modal-from-login" class="text-green-600 hover:underline font-medium">Regístrate aquí</button></p> </form>
-        </div>
-    </div>
-
-    <!-- Modal de registro de usuario -->
-    <div id="register-modal" class="modal" aria-labelledby="register-modal-title-placeholder" aria-modal="true" role="dialog">
-        <div class="modal-content">
-            <div class="flex justify-between items-center mb-6"> <h2 id="register-modal-title-placeholder" class="text-xl md:text-2xl font-bold text-green-700">Crear Cuenta</h2> <button id="close-register-modal-btn-placeholder" class="text-2xl text-gray-600 hover:text-gray-800" aria-label="Cerrar modal de registro">&times;</button> </div>
-            <form> <div> <label for="register-name-placeholder" class="form-label">Nombre</label> <input type="text" id="register-name-placeholder" class="form-input" required autocomplete="name" placeholder="Tu Nombre Completo"> </div> <div> <label for="register-email-placeholder" class="form-label">Correo</label> <input type="email" id="register-email-placeholder" class="form-input" required autocomplete="email" placeholder="tu@correo.cl"> </div> <div> <label for="register-password-placeholder" class="form-label">Contraseña</label> <input type="password" id="register-password-placeholder" class="form-input" required minlength="6" autocomplete="new-password" placeholder="Mínimo 6 caracteres"> </div> <div> <label for="register-confirm-password-placeholder" class="form-label">Confirmar Contraseña</label> <input type="password" id="register-confirm-password-placeholder" class="form-input" required autocomplete="new-password" placeholder="Repite tu contraseña"> </div> <button type="button" id="register-submit-placeholder" class="btn btn-primary w-full mt-6">Registrarme (Simulado)</button> <p class="text-sm text-center mt-4">¿Ya tienes cuenta? <button type="button" id="open-login-modal-from-register" class="text-green-600 hover:underline font-medium">Inicia sesión aquí</button></p> </form>
-        </div>
-    </div>
-    <!-- Script principal de la aplicación -->
+    
     <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+// Estilos para el footer. Es una sección semántica <footer role="contentinfo">.
+// Se usa un color de fondo oscuro para contrastar con el resto de la página.
+
+footer {
+    background-color: #1f2937; // Tailwind gray-800
+    color: #9ca3af; // Tailwind gray-400
+    padding: 3rem 1.5rem;
+    text-align: center;
+
+    a {
+        // Selector anidado para los enlaces dentro del footer
+        color: #d1d5db; // Tailwind gray-300
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: $surface-color; // Blanco
+            text-decoration: underline;
+        }
+
+        // Estilo para los iconos dentro de los enlaces
+        i {
+            margin-right: 0.5rem;
+        }
+    }
+}

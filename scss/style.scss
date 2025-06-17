@@ -1,0 +1,22 @@
+// scss/style.scss
+// Comentario: Este es el archivo principal de SASS.
+// Importo todos los parciales en un orden lógico: primero utilidades (variables, mixins),
+// luego estilos base, y finalmente componentes y layouts.
+
+// 1. Utilidades (no generan CSS por sí mismas)
+@import 'utils/variables';
+@import 'utils/mixins';
+
+// 2. Base (estilos para etiquetas HTML, reseteos, tipografía)
+// @import 'base/reset'; // Opcional si necesitas un reseteo más allá de Tailwind
+@import 'base/typography';
+
+// 3. Layout (estilos para las secciones principales como header, footer, grid)
+@import 'layout/header';
+// @import 'layout/footer'; // Podrías añadir estilos de footer aquí
+// @import 'layout/grid'; // Si tienes estilos de grid personalizados
+
+// 4. Componentes (estilos para elementos reutilizables)
+@import 'components/buttons';
+@import 'components/cards';
+// @import 'components/modals'; // El CSS de los modales ya está bien definido

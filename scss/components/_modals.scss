@@ -1,0 +1,53 @@
+// Estilos para todos los componentes modales.
+// La clase base '.modal' crea el overlay semitransparente.
+// '.modal-content' define el contenedor blanco con sombra y padding.
+
+.modal { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.65); 
+    @include flex-center; // Uso de mixin
+    z-index: 1000; 
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.3s ease, visibility 0s 0.3s; 
+
+    &.active { 
+        opacity: 1; 
+        visibility: visible; 
+        transition: opacity 0.3s ease, visibility 0s 0s; 
+    }
+}
+
+.modal-content { 
+    background-color: $surface-color; // Fondo blanco sólido
+    padding: 1.5rem; 
+    border-radius: 0.5rem; 
+    width: 90%; 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); 
+    transform: scale(0.95); 
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+
+    @include respond-to(tablet) { 
+        padding: 2rem; 
+    }
+}
+
+.modal.active .modal-content { 
+    transform: scale(1); 
+}
+
+// Modificadores para anchos específicos
+#login-modal .modal-content, 
+#register-modal .modal-content { 
+    max-width: 450px; 
+} 
+.cart-modal-content { 
+    max-width: 550px; 
+    background-color: $surface-color !important; /* Asegurar fondo blanco para el carrito */
+}

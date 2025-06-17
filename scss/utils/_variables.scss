@@ -1,0 +1,24 @@
+// Almaceno todos los valores reutilizables como colores y fuentes aquí.
+// Esto facilita el mantenimiento de la paleta de colores del sitio.
+
+// Paleta de Colores
+$primary-color: #00796b;      // Verde principal de la marca
+$primary-dark-color: #004d40; // Verde oscuro para hover
+$secondary-color: #0284c7;   // Azul para acciones secundarias
+$secondary-dark-color: #0369a1;
+
+$text-color-base: #374151;    // Gris oscuro para texto principal
+$text-color-light: #4b5563;   // Gris medio para descripciones
+$text-color-heading: #111827; // Gris muy oscuro para títulos
+
+$background-color: #f9fafb;  // Gris muy claro para fondos de página
+$surface-color: #ffffff;      // Blanco para cards y modales
+$border-color: #e5e7eb;      // Borde sutil
+
+// Tipografía
+$font-family-base: 'Inter', sans-serif;
+
+// Breakpoints para Media Queries (Unidad 4: Responsive Design)
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
