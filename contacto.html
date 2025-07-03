@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacta a PaCar EcoSonic. Escríbenos para consultas, pedidos personalizados o información sobre nuestros parlantes sustentables.">
     <title>Contacto - PaCar EcoSonic</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,11 +16,7 @@
     <header class="header-sticky" role="banner">
         <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center" aria-label="Navegación principal">
             <a href="index.html" id="logo-link" class="flex items-center space-x-3 text-2xl sm:text-3xl font-bold text-green-700 tracking-tight">
-                <!-- 1. La imagen del logo -->
-                <img src="assets/images/logo-PaCar.png" alt="Logo de PaCar EcoSonic" class="h-8 sm:h-10 w-auto">                
-                
-                <!-- 2. El texto del nombre de la marca -->
-                <span class="text-xl sm:text-2xl font-bold text-green-700 tracking-tight">PaCar EcoSonic</span>
+                <span>PaCar EcoSonic</span>
             </a>
             
             <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
@@ -55,15 +52,15 @@
                     <h1 id="contacto-title" class="section-title">Hablemos</h1>
                     <p class="section-subtitle px-4">Nos encantaría saber de ti. Si tienes preguntas sobre nuestros productos, quieres hacer un pedido personalizado o simplemente conversar sobre diseño y sonido, no dudes en contactarnos.</p>
                  </div>
-                 <div class="mt-12 max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                 <div class="mt-12 max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-lg shadow-lg">
                     <form action="#" method="POST" class="space-y-6">
                         <div>
                             <label for="name" class="form-label">Nombre Completo</label>
-                            <input type="text" name="name" id="name" autocomplete="name" class="form-input" placeholder="Tu Nombre">
+                            <input type="text" name="name" id="name" autocomplete="name" class="form-input" placeholder="Tu Nombre" required>
                         </div>
                         <div>
                             <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" name="email" id="email" autocomplete="email" class="form-input" placeholder="tu@correo.cl">
+                            <input type="email" name="email" id="email" autocomplete="email" class="form-input" placeholder="tu@correo.cl" required>
                         </div>
                         <div>
                             <label for="subject" class="form-label">Asunto</label>
@@ -71,7 +68,7 @@
                         </div>
                         <div>
                             <label for="message" class="form-label">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" class="form-input" placeholder="Escribe tu mensaje aquí..."></textarea>
+                            <textarea id="message" name="message" rows="4" class="form-input" placeholder="Escribe tu mensaje aquí..." required></textarea>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary w-full">Enviar Mensaje</button>
